@@ -11,6 +11,12 @@
     "test": "ava",
     "lint": "xo"
   },
+  "dependencies": {
+    "decompress": "^4.2.0",
+    "execa": "^0.8.0",
+    "get-stream": "^3.0.0",
+    "tar-stream": "^1.5.5"
+  },
   "devDependencies": {
     "ava": "^0.23.0",
     "xo": "^0.18.2"

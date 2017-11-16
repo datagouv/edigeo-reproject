@@ -22,10 +22,16 @@ test('rewriteVEC', async t => {
   t.is(reprojectedVEC.toString(), expectedVEC.toString())
 })
 
-test('rewriteGEO', async t => {
+test('rewriteGEO: supported', async t => {
   const ignfCode = 'RGF93CC49'
   const originalGEO = await readFile(join(__dirname, 'fixtures', 'edigeo-54', 'EX.GEO'))
   const expectedGEO = await readFile(join(__dirname, 'fixtures', 'edigeo-54-reprojected', 'EX.GEO'))
   const reprojectedGEO = rewriteGEO(originalGEO, ignfCode)
   t.is(reprojectedGEO.toString(), expectedGEO.toString())
+})
+
+test('rewriteGEO: not supported', async t => {
+  const ignfCode = 'RGF93CC49'
+  const originalGEO = await readFile(join(__dirname, 'fixtures', 'edigeo-971', 'EX.GEO'))
+  t.throws(() => rewriteGEO(originalGEO, ignfCode), 'Not supported')
 })

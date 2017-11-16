@@ -1,7 +1,7 @@
 # edigeo-reproject
 
 [![npm version](https://badge.fury.io/js/edigeo-reproject.svg)](https://badge.fury.io/js/edigeo-reproject)
-[![CircleCI](https://circleci.com/gh/etalab/edigeo-reproject/tree/master.svg?style=svg)](https://circleci.com/gh/etalab/edigeo-reproject/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/etalab/edigeo-reproject/master.svg)](https://circleci.com/gh/etalab/edigeo-reproject/tree/master)
 [![codecov](https://codecov.io/gh/etalab/edigeo-reproject/branch/master/graph/badge.svg)](https://codecov.io/gh/etalab/edigeo-reproject)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 

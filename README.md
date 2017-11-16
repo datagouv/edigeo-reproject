@@ -12,6 +12,35 @@ Reprojection à la volée des feuilles EDIGÉO
 * Node.js >= 8
 * bzip2
 
+## Utilisation côté serveur
+
+### Installation
+
+```bash
+npm install edigeo-reproject
+```
+
+### Exemple d'utilisation
+
+```js
+const fs = require('fs')
+const {promisify} = require('util')
+
+const {reprojectArchive} = require('edigeo-reproject')
+
+const readFile = promisify(fs.readFile)
+const writeFile = promisify(fs.writeFile)
+
+// Actuellement l'opérateur await ne fonctionne que dans une fonction asynchrone
+async function doJob() {
+  const originalArchive = await readFile('/path/to/edigeo-54XXXYYYZZ0000.tar.bz2')
+  const reprojectedArchive = await reprojectArchive(originalArchive, '54')
+  await writeFile('/path/to/edigeocc-54XXXYYYZZ0000.tar.bz2', reprojectedArchive)
+}
+
+doJob().catch(console.error)
+```
+
 ## Utilisation en ligne de commande
 
 ### Installation

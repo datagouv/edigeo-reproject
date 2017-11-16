@@ -19,7 +19,7 @@
     "test": "nyc ava",
     "lint": "xo",
     "codecov": "codecov -f coverage/coverage-final.json",
-    "prepublish": "npm run build-zones"
+    "prepare": "npm run build-zones"
   },
   "dependencies": {
     "decompress": "^4.2.0",

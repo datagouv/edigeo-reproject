@@ -1029,6 +1029,13 @@ decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
+decompress-bzip2@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/decompress-bzip2/-/decompress-bzip2-4.0.0.tgz#d1254c949e05eaf6289754286b063fdc7cff013f"
+  dependencies:
+    file-type "^4.3.0"
+    seek-bzip "^1.0.5"
+
 decompress-tar@^4.0.0, decompress-tar@^4.1.0, decompress-tar@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/decompress-tar/-/decompress-tar-4.1.1.tgz#718cbd3fcb16209716e70a26b84e7ba4592e5af1"
@@ -1545,6 +1552,10 @@ file-entry-cache@^2.0.0:
 file-type@^3.8.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
+
+file-type@^4.3.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-4.4.0.tgz#1b600e5fca1fbdc6e80c0a70c71c8dba5f7906c5"
 
 file-type@^5.2.0:
   version "5.2.0"

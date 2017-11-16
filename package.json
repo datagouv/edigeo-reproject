@@ -18,7 +18,7 @@
     "build-zones": "csvtojson zones_cc.csv > zones_cc.json",
     "test": "nyc ava",
     "lint": "xo",
-    "codecov": "nyc report --reporter=lcov | codecov",
+    "codecov": "codecov -f coverage/coverage-final.json",
     "prepublish": "npm run build-zones"
   },
   "dependencies": {
@@ -42,6 +42,18 @@
   "xo": {
     "space": 2,
     "semicolon": false
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "lib",
+      "index.js"
+    ],
+    "reporter": [
+      "html",
+      "json",
+      "text-summary"
+    ]
   },
   "engines": {
     "node": ">= 8"

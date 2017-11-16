@@ -1,6 +1,6 @@
 {
   "name": "edigeo-reproject",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reprojection à la volée des feuilles EDIGÉO",
   "main": "index.js",
   "repository": "git@github.com:etalab/edigeo-reproject.git",

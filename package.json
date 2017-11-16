@@ -16,8 +16,9 @@
   "bin": "bin/cli.js",
   "scripts": {
     "build-zones": "csvtojson zones_cc.csv > zones_cc.json",
-    "test": "ava",
+    "test": "nyc ava",
     "lint": "xo",
+    "codecov": "nyc report --reporter=lcov | codecov",
     "prepublish": "npm run build-zones"
   },
   "dependencies": {
@@ -32,12 +33,17 @@
   },
   "devDependencies": {
     "ava": "^0.23.0",
+    "codecov": "^3.0.0",
     "csvtojson": "^1.1.9",
     "decompress-bzip2": "^4.0.0",
+    "nyc": "^11.3.0",
     "xo": "^0.18.2"
   },
   "xo": {
     "space": 2,
     "semicolon": false
+  },
+  "engines": {
+    "node": ">= 8"
   }
 }

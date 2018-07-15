@@ -18,7 +18,7 @@ test('rewriteVEC', async t => {
   const targetSrs = getReference('RGF93CC49').proj4
   const originalVEC = await readFile(join(__dirname, 'fixtures', 'edigeo-54', 'EX.VEC'))
   const expectedVEC = await readFile(join(__dirname, 'fixtures', 'edigeo-54-reprojected', 'EX.VEC'))
-  const reprojectedVEC = rewriteVEC(originalVEC, targetSrs)
+  const reprojectedVEC = rewriteVEC(originalVEC, 'L93toCC', targetSrs)
   t.is(reprojectedVEC.toString(), expectedVEC.toString())
 })
 

@@ -34,7 +34,7 @@ const writeFile = promisify(fs.writeFile)
 // Actuellement l'opérateur await ne fonctionne que dans une fonction asynchrone
 async function doJob() {
   const originalArchive = await readFile('/path/to/edigeo-54XXXYYYZZ0000.tar.bz2')
-  const reprojectedArchive = await reprojectArchive(originalArchive, '54')
+  const reprojectedArchive = await reprojectArchive(originalArchive, '54', 'L93toCC') // L93toCC ou CCtoL93
   await writeFile('/path/to/edigeocc-54XXXYYYZZ0000.tar.bz2', reprojectedArchive)
 }
 
@@ -52,9 +52,9 @@ npm install -g edigeo-reproject
 ### Exemple d'utilisation
 
 ```bash
-curl /path/to/edigeo-54084000AB01.tar.bz2 | edigeo-reproject -d 54 > edigeocc-54084000AB01.tar.bz2
+curl /path/to/edigeo-54084000AB01.tar.bz2 | edigeo-reproject -d 54 -m L93toCC > edigeocc-54084000AB01.tar.bz2
 # ou directement à partir d'une ressource distante
-curl https://cadastre.data.gouv.fr/data/dgfip-pci-vecteur/2017-10-12/edigeo/feuilles/54/54084/edigeo-54084000AB01.tar.bz2 | edigeo-reproject -d 54 > edigeocc-54084000AB01.tar.bz2
+curl https://cadastre.data.gouv.fr/data/dgfip-pci-vecteur/2017-10-12/edigeo/feuilles/54/54084/edigeo-54084000AB01.tar.bz2 | edigeo-reproject -d 54 -m L93toCC > edigeocc-54084000AB01.tar.bz2
 ```
 
 ## Licence

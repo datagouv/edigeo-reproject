@@ -15,6 +15,6 @@ if (!argv.d && !argv.dep) {
 const depCode = argv.d || argv.dep
 
 getStream.buffer(process.stdin)
-  .then(inputArchive => reprojectArchive(inputArchive, depCode))
+  .then(inputArchive => reprojectArchive(inputArchive, depCode, argv.m || argv.mode))
   .then(result => process.stdout.write(result))
   .catch(err => console.error('Erreur : ' + err.message))

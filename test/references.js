@@ -1,8 +1,8 @@
-const test = require('ava')
-const {ignf2epsg, epsg2ignf, getReference} = require('../lib/references')
+import test from 'ava'
+import {ignf2epsg, epsg2ignf, getReference} from '../lib/references.js'
 
 test('ignf2epsg: unknown code', t => {
-  t.throws(() => ignf2epsg('FAIL'), 'Unknown IGNF code: FAIL')
+  t.throws(() => ignf2epsg('FAIL'), undefined, 'Unknown IGNF code: FAIL')
 })
 
 test('ignf2epsg: known code', t => {
@@ -14,7 +14,7 @@ test('ignf2epsg: known code (via correction)', t => {
 })
 
 test('epsg2ignf: unknown code', t => {
-  t.throws(() => epsg2ignf(1234), 'No IGNF matching code: 1234')
+  t.throws(() => epsg2ignf(1234), undefined, 'No IGNF matching code: 1234')
 })
 
 test('epsg2ignf: known code', t => {
@@ -28,6 +28,6 @@ test('getReference: known codes', t => {
 })
 
 test('getReference: unknown codes', t => {
-  t.throws(() => getReference('LALALA'), 'Unknown IGNF code: LALALA')
-  t.throws(() => getReference(12345678), 'Unknown EPSG code: 12345678')
+  t.throws(() => getReference('LALALA'), undefined, 'Unknown IGNF code: LALALA')
+  t.throws(() => getReference(12_345_678), undefined, 'Unknown EPSG code: 12345678')
 })

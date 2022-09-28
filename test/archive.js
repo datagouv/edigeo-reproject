@@ -1,13 +1,12 @@
 import fs from 'node:fs'
-import path from 'path';
-import {join} from 'node:path'
+import path, {join} from 'node:path'
 import {promisify} from 'node:util'
+import {fileURLToPath} from 'node:url'
 import test from 'ava'
 import decompress from 'decompress'
 import {reprojectArchive} from '../index.js'
-import {fileURLToPath} from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const readFile = promisify(fs.readFile)
 const fixturesPath = join(__dirname, 'fixtures')
 

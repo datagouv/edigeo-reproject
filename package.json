@@ -17,10 +17,10 @@
   "bin": "bin/cli.js",
   "scripts": {
     "build-zones": "csvtojson zones_cc.csv > zones_cc.json",
-    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-json-modules\" nyc ava",
+    "test": "nyc ava",
     "lint": "xo",
-    "codecov": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-json-modules\" codecov -f coverage/coverage-final.json",
-    "prepare": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-json-modules\" npm run build-zones"
+    "codecov": "codecov -f coverage/coverage-final.json",
+    "prepare": "npm run build-zones"
   },
   "dependencies": {
     "decompress": "^4.2.0",

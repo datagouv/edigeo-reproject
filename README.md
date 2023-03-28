@@ -17,7 +17,7 @@ Reprojection à la volée des feuilles EDIGÉO
 ### Installation
 
 ```bash
-npm install edigeo-reproject
+npm install @etalab/edigeo-reproject
 ```
 
 If you need to use CommonJS syntax, you will need to use the package version 0.2.0 and install it with `npm install edigeo-reproject@0.2.0`

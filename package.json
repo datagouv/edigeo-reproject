@@ -1,5 +1,5 @@
 {
-  "name": "edigeo-reproject",
+  "name": "@etalab/edigeo-reproject",
   "version": "1.0.0",
   "description": "Reprojection à la volée des feuilles EDIGÉO",
   "main": "index.js",

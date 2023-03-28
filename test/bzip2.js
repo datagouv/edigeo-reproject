@@ -1,12 +1,14 @@
-const test = require('ava')
-const decompressBzip2 = require('decompress-bzip2')
-const {compress} = require('../lib/bzip2')
+import {Buffer} from 'node:buffer'
+import test from 'ava'
+import decompressBzip2 from 'decompress-bzip2'
+import {compress} from '../lib/bzip2.js'
 
-test(async t => {
+test('bzip2 tests', async t => {
   const inputBuffer = Buffer.from('Hello world!')
   t.is(inputBuffer.length, 12)
   const compressedBuffer = await compress(inputBuffer)
   t.true(compressedBuffer.length !== 12)
-  const decompressedBuffer = (await decompressBzip2()(compressedBuffer))[0].data
+  let decompressedBuffer = await decompressBzip2()(compressedBuffer)
+  decompressedBuffer = decompressedBuffer[0].data
   t.is(decompressedBuffer.toString(), 'Hello world!')
 })

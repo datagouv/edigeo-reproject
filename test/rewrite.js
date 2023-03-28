@@ -1,12 +1,12 @@
-const fs = require('fs')
-const {join} = require('path')
-const {promisify} = require('util')
+import fs from 'node:fs'
+import path, {join} from 'node:path'
+import {promisify} from 'node:util'
+import {fileURLToPath} from 'node:url'
+import test from 'ava'
+import {printCoord, rewriteVEC, rewriteGEO} from '../lib/rewrite.js'
+import {getReference} from '../lib/references.js'
 
-const test = require('ava')
-
-const {printCoord, rewriteVEC, rewriteGEO} = require('../lib/rewrite')
-const {getReference} = require('../lib/references')
-
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const readFile = promisify(fs.readFile)
 
 test('printCoord', t => {
@@ -33,5 +33,5 @@ test('rewriteGEO: supported', async t => {
 test('rewriteGEO: not supported', async t => {
   const ignfCode = 'RGF93CC49'
   const originalGEO = await readFile(join(__dirname, 'fixtures', 'edigeo-971', 'EX.GEO'))
-  t.throws(() => rewriteGEO(originalGEO, ignfCode), 'Not supported')
+  t.throws(() => rewriteGEO(originalGEO, ignfCode), undefined, 'Not supported')
 })

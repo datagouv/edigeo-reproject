@@ -1,12 +1,13 @@
 {
   "name": "edigeo-reproject",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Reprojection à la volée des feuilles EDIGÉO",
   "main": "index.js",
   "repository": "git@github.com:etalab/edigeo-reproject.git",
   "author": "Jérôme Desboeufs <jerome.desboeufs@data.gouv.fr>",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "files": [
     "lib",
     "bin",
@@ -26,18 +27,18 @@
     "epsg-index": "^0.5.0",
     "execa": "^0.8.0",
     "get-stream": "^3.0.0",
-    "lodash": "^4.17.4",
+    "lodash-es": "^4.17.21",
     "proj4": "^2.4.4",
     "tar-stream": "^1.5.5",
     "yargs": "^10.0.3"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
-    "codecov": "^3.0.0",
+    "ava": "^3.15.0",
+    "codecov": "^3.8.2",
     "csvtojson": "^1.1.9",
     "decompress-bzip2": "^4.0.0",
-    "nyc": "^11.3.0",
-    "xo": "^0.18.2"
+    "nyc": "^15.1.0",
+    "xo": "^0.52.3"
   },
   "xo": {
     "space": 2,
@@ -56,6 +57,6 @@
     ]
   },
   "engines": {
-    "node": ">= 8"
+    "node": ">= 16"
   }
 }

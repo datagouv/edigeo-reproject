@@ -1,8 +1,9 @@
-const test = require('ava')
-const decompress = require('decompress')
-const {pack} = require('../lib/tar')
+import {Buffer} from 'node:buffer'
+import test from 'ava'
+import decompress from 'decompress'
+import {pack} from '../lib/tar.js'
 
-test(async t => {
+test('tar tests', async t => {
   const file1 = {path: 'hello.txt', data: Buffer.from('Hello world!')}
   const file2 = {path: 'salut.txt', data: Buffer.from('Salut tout le monde !')}
   const packedFiles = await pack([file1, file2])
